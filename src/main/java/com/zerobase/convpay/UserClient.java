@@ -21,7 +21,7 @@ public class UserClient {
         // 취소 500원
         PayCancelRequest payCancelRequest = new PayCancelRequest(ConvenienceType.G25, 500);
         PayCancelResponse payCancelResponse = conveniencePayService.payCancel(payCancelRequest);
-
+        System.out.println();
         System.out.println(payCancelResponse.toString());
     }
 }
