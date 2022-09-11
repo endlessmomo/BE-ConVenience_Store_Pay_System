@@ -37,7 +37,7 @@ class MoneyAdaptorTest {
         Integer payCancleAmount = 0;
 
         //when
-        MoneyUseCancelResult moneyUseCancelResult = moneyAdapter.useCancle(payCancleAmount);
+        MoneyUseCancelResult moneyUseCancelResult = moneyAdapter.useCancel(payCancleAmount);
 
         //then
         assertEquals(MONEY_USE_CANCEL_FAIL, moneyUseCancelResult);

@@ -6,6 +6,15 @@ public class PayCancelResponse {
     PayCancelResult payCancelResult;
     Integer payCancelAmount;
 
+
+    @Override
+    public String toString() {
+        return "PayCancelResponse{" +
+                "payCancelResult=" + payCancelResult +
+                ", payCancelAmount=" + payCancelAmount +
+                '}';
+    }
+
     public PayCancelResponse(PayCancelResult payCancelResult, Integer payCancelAmount) {
         this.payCancelResult = payCancelResult;
         this.payCancelAmount = payCancelAmount;

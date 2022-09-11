@@ -6,6 +6,7 @@ import com.zerobase.convpay.type.ConvenienceType;
 import com.zerobase.convpay.dto.PayRequest;
 import com.zerobase.convpay.dto.PayResponse;
 import com.zerobase.convpay.type.PayCancelResult;
+import com.zerobase.convpay.type.PayMethodType;
 import com.zerobase.convpay.type.PayResult;
 import org.junit.jupiter.api.Test;
 
@@ -18,20 +19,20 @@ class ConveniencePayServiceTest {
     @Test
     void paySuccess(){
         //given -> 어떤 데이터가 있을 떄
-        PayRequest payRequest = new PayRequest(ConvenienceType.G25, 50);
+        PayRequest payRequest = new PayRequest(PayMethodType.MONEY ,ConvenienceType.G25, 50);
 
         //when -> 어떤 경우에
         PayResponse payResponse = conveniencePayService.pay(payRequest);
 
         //then -> 결과
         assertEquals(PayResult.SUCCESS, payResponse.getPayResult());
-        assertEquals(50, payResponse.getPaidAmount());
+        assertEquals(35, payResponse.getPaidAmount());
     }
 
     @Test
     void payFail(){
         //given -> 어떤 데이터가 있을 떄
-        PayRequest payRequest = new PayRequest(ConvenienceType.G25, 1000_001);
+        PayRequest payRequest = new PayRequest(PayMethodType.MONEY, ConvenienceType.G25, 1500_001);
 
         //when -> 어떤 경우에
         PayResponse payResponse = conveniencePayService.pay(payRequest);
@@ -44,7 +45,7 @@ class ConveniencePayServiceTest {
     @Test
     void pay_cancel_Fail(){
         //given -> 어떤 데이터가 있을 떄
-        PayCancelRequest payCancelRequest = new PayCancelRequest(ConvenienceType.G25, 99);
+        PayCancelRequest payCancelRequest = new PayCancelRequest(PayMethodType.MONEY, ConvenienceType.G25, 99);
 
         //when -> 어떤 경우에
         PayCancelResponse payCancelResponse= conveniencePayService.payCancel(payCancelRequest);
@@ -56,7 +57,7 @@ class ConveniencePayServiceTest {
     @Test
     void pay_cancel_Success(){
         //given -> 어떤 데이터가 있을 떄
-        PayCancelRequest payCancelRequest = new PayCancelRequest(ConvenienceType.G25, 1000);
+        PayCancelRequest payCancelRequest = new PayCancelRequest(PayMethodType.MONEY, ConvenienceType.G25, 1000);
 
         //when -> 어떤 경우에
         PayCancelResponse payCancelResponse= conveniencePayService.payCancel(payCancelRequest);
