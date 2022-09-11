@@ -16,7 +16,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class ConveniencePayServiceTest {
     ApplicationConfig applicationConfig = new ApplicationConfig();
-    ConveniencePayService conveniencePayService = applicationConfig.conveniencePayServiceDiscountedPayMethod();
+    ConveniencePayService conveniencePayService = applicationConfig.conveniencePayService();
 
     @Test
     void paySuccess(){
