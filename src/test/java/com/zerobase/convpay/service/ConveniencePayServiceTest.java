@@ -1,5 +1,6 @@
 package com.zerobase.convpay.service;
 
+import com.zerobase.convpay.config.ApplicationConfig;
 import com.zerobase.convpay.dto.PayCancelRequest;
 import com.zerobase.convpay.dto.PayCancelResponse;
 import com.zerobase.convpay.type.ConvenienceType;
@@ -14,7 +15,8 @@ import static org.junit.jupiter.api.Assertions.*;
 
 
 class ConveniencePayServiceTest {
-    ConveniencePayService conveniencePayService = new ConveniencePayService();
+    ApplicationConfig applicationConfig = new ApplicationConfig();
+    ConveniencePayService conveniencePayService = applicationConfig.conveniencePayServiceDiscountedPayMethod();
 
     @Test
     void paySuccess(){
