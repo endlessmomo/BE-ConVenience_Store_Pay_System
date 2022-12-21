@@ -39,7 +39,7 @@ public class MoneyAdaptor implements PaymentInterface {
     }
 
     @Override
-    public CancelPaymentResult cancelpayment(Integer payCancelAmount) {
+    public CancelPaymentResult cancelPayment(Integer payCancelAmount) {
         MoneyUseCancelResult moneyUseCancelResult = useCancel(payCancelAmount);
 
         if(moneyUseCancelResult == MoneyUseCancelResult.MONEY_USE_CANCEL_FAIL){

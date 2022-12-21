@@ -10,20 +10,6 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
 
-// '편결이'
-/*
-      해당 순서로 구현하는게 가장 Best!
-
-        fail fast
-
-        Method()
-
-        Exception case 1
-        Exception case 2
-        Exception case 3
-
-        Success Case (Only One)
-*/
 public class ConveniencePayService {
     private final Map <PayMethodType,PaymentInterface> paymentInterfaceMap = new HashMap <>();
     private final DiscountInterface discountInterface;
@@ -55,7 +41,7 @@ public class ConveniencePayService {
     public PayCancelResponse payCancel(PayCancelRequest payCancelRequest) {
         PaymentInterface paymentInterface = paymentInterfaceMap.get(payCancelRequest.getPayMethodType());
 
-        CancelPaymentResult cancelPaymentResult = paymentInterface.cancelpayment(payCancelRequest.getPayCancelAmount());
+        CancelPaymentResult cancelPaymentResult = paymentInterface.cancelPayment(payCancelRequest.getPayCancelAmount());
 
         if (cancelPaymentResult == CancelPaymentResult.CANCEL_PAYMENT_FAIL) {
             return new PayCancelResponse(PayCancelResult.PAY_CANCEL_FAIL, 0);

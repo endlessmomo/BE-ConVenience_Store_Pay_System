@@ -48,7 +48,7 @@ public class CardAdaptor implements PaymentInterface {
     }
 
     @Override
-    public CancelPaymentResult cancelpayment(Integer payCancelAmount) {
+    public CancelPaymentResult cancelPayment(Integer payCancelAmount) {
         CardUseCancelResult cardUseCancelResult = cancelCapture(payCancelAmount);
 
         if(cardUseCancelResult == CardUseCancelResult.CARD_CANCEL_FAIL) {

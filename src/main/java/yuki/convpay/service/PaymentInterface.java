@@ -7,6 +7,6 @@ import yuki.convpay.type.PaymentResult;
 public interface PaymentInterface {
     PayMethodType getPayMethodType();
     PaymentResult payment(Integer payAmount);
-    CancelPaymentResult cancelpayment(Integer cancelPayAmount);
+    CancelPaymentResult cancelPayment(Integer cancelPayAmount);
 
 }
