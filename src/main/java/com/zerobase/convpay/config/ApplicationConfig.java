@@ -17,19 +17,19 @@ public class ApplicationConfig {
     public ConveniencePayService conveniencePayService(){
         return new ConveniencePayService(
                 new HashSet <>(
-                        Arrays.asList( MoneyAdaptor(), CardAdaptor())
+                        Arrays.asList( moneyAdaptor(), cardAdaptor())
                 ),
                 discountByConvenience()
         );
     }
 
     @Bean
-    public static CardAdaptor CardAdaptor() {
+    public static CardAdaptor cardAdaptor() {
         return new CardAdaptor();
     }
 
     @Bean
-    public static MoneyAdaptor MoneyAdaptor() {
+    public static MoneyAdaptor moneyAdaptor() {
         return new MoneyAdaptor();
     }
 

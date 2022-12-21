@@ -1,0 +1,19 @@
+<!--<?xml version="1.0" encoding="UTF-8"?>-->
+<!--<beans xmlns="http://www.springframework.org/schema/beans"-->
+<!--       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"-->
+<!--       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">-->
+
+<!--    <bean id="conveniencePayService" class="com.zerobase.convpay.service.ConveniencePayService">-->
+<!--        <constructor-arg name="paymentInterfaceSet">-->
+<!--            <set>-->
+<!--                <ref bean="moneyAdaptor"/>-->
+<!--                <ref bean="cardAdaptor"/>-->
+<!--            </set>-->
+<!--        </constructor-arg>-->
+<!--        <constructor-arg name="discountInterface" ref="discountByConvenience"/>-->
+<!--    </bean>-->
+
+<!--        <bean id="cardAdaptor" class="com.zerobase.convpay.service.CardAdaptor"/>-->
+<!--        <bean id="moneyAdaptor" class="com.zerobase.convpay.service.MoneyAdaptor"/>-->
+<!--        <bean id="discountByConvenience" class="com.zerobase.convpay.service.DiscountByConvenience"/>-->
+<!--</beans>-->

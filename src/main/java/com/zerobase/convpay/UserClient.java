@@ -10,6 +10,7 @@ import com.zerobase.convpay.type.ConvenienceType;
 import com.zerobase.convpay.type.PayMethodType;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class UserClient {
     public static void main(String[] args) {
@@ -20,7 +21,7 @@ public class UserClient {
                 ConveniencePayService.class);
 
         // 결제 1000원
-        PayRequest payRequest = new PayRequest(PayMethodType.MONEY, ConvenienceType.G25, 1000);
+        PayRequest payRequest = new PayRequest(PayMethodType.CARD, ConvenienceType.G25, 1000);
         PayResponse payResponse = conveniencePayService.pay(payRequest);
 
         System.out.println(payResponse.toString());

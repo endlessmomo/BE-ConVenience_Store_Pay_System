@@ -6,6 +6,7 @@ import org.junit.jupiter.api.Test;
 
 import static com.zerobase.convpay.type.MoneyUseCancelResult.MONEY_USE_CANCEL_FAIL;
 import static com.zerobase.convpay.type.MoneyUseResult.USE_FAIL;
+import static com.zerobase.convpay.type.MoneyUseResult.USE_SUCCESS;
 import static org.junit.jupiter.api.Assertions.*;
 
 class MoneyAdaptorTest {
@@ -28,7 +29,7 @@ class MoneyAdaptorTest {
         //when
         MoneyUseResult moneyUseResult = moneyAdapter.use(payAmount);
         //then
-        assertEquals(USE_FAIL, moneyUseResult);
+        assertEquals(USE_SUCCESS, moneyUseResult);
     }
 
     @Test
